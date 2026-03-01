@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ShiftMaster.Absence.API.props" />
+</Project>

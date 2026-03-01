@@ -1,0 +1,56 @@
+<div class="layout">
+  <!-- Top Navbar -->
+  <mat-toolbar class="navbar">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/" class="logo">
+      <span class="logo-s">S</span>HIFTMASTER
+    </a>
+    <span class="spacer"></span>
+    <mat-form-field appearance="outline" class="search" subscriptSizing="dynamic">
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Search...">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+    <button mat-icon-button [matMenuTriggerFor]="notifMenu">
+      <mat-icon [matBadge]="notificationsCount" matBadgeColor="warn">notifications</mat-icon>
+    </button>
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <mat-icon>account_circle</mat-icon>
+      {{ user()?.firstName }} | {{ user()?.role }}
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>power_settings_new</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-menu #notifMenu="matMenu">
+    <button mat-menu-item>Planning validé</button>
+    <button mat-menu-item>Demande de congé approuvée</button>
+  </mat-menu>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item>Profil</button>
+    <button mat-menu-item (click)="logout()">Déconnexion</button>
+  </mat-menu>
+
+  <!-- Sidebar -->
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+      <mat-nav-list>
+        @for (item of menuItems(); track item.route) {
+          <a mat-list-item [routerLink]="item.route" routerLinkActive="active">
+            <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+            <span matListItemTitle>{{ item.label }}</span>
+          </a>
+        }
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

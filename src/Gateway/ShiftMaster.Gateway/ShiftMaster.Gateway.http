@@ -1,0 +1,6 @@
+@ShiftMaster.Gateway_HostAddress = http://localhost:5283
+
+GET {{ShiftMaster.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

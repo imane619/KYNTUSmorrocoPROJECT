@@ -1,0 +1,12 @@
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.deps.json
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.dll
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\bin\Debug\net8.0\ShiftMaster.Shared.pdb
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.AssemblyInfo.cs
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.dll
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\refint\ShiftMaster.Shared.dll
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ShiftMaster.Shared.pdb
+C:\Users\pc\Desktop\KYNTUSproject\src\Shared\ShiftMaster.Shared\obj\Debug\net8.0\ref\ShiftMaster.Shared.dll

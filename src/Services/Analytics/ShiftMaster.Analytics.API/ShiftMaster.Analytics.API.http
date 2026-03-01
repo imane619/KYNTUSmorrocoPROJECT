@@ -1,0 +1,6 @@
+@ShiftMaster.Analytics.API_HostAddress = http://localhost:5164
+
+GET {{ShiftMaster.Analytics.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

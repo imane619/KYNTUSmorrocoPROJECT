@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VuOEvcdbGw0Do3NqQfikB0g2VC4lsvRElfaFpz+jbVg=",
+  "Source": "ShiftMaster.Notification.API",
+  "BasePath": "_content/ShiftMaster.Notification.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

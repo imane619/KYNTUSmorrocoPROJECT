@@ -1,0 +1,31 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>
+        <span class="logo-s">S</span>HIFTMASTER
+      </mat-card-title>
+      <mat-card-subtitle>Connexion</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="login()">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+          <mat-error>Email invalide</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput formControlName="password" type="password">
+          <mat-error>Minimum 6 caractères</mat-error>
+        </mat-form-field>
+        @if (error) {
+          <div class="error">{{ error }}</div>
+        }
+        <button mat-flat-button color="primary" type="submit" class="full-width" [disabled]="loading">
+          {{ loading ? 'Connexion...' : 'Se connecter' }}
+        </button>
+      </form>
+      <p class="demo-hint">Demo: admin&#64;shiftmaster.com / Admin123! | manager&#64;shiftmaster.com / Manager123! | employee&#64;shiftmaster.com / Employee123!</p>
+    </mat-card-content>
+  </mat-card>
+</div>

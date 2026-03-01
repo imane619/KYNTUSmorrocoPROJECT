@@ -1,0 +1,90 @@
+<div class="dashboard">
+  <h1>Bonjour {{ auth.user()?.firstName }} 👋</h1>
+
+  @if (isEmployee) {
+    <!-- Employee Dashboard -->
+    <div class="cards">
+      <mat-card class="kpi-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>calendar_month</mat-icon>
+          <mat-card-title>Mon planning semaine</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Lun Mar Mer Jeu Ven Sam Dim</p>
+          <div class="shift-bar">9h - 16h</div>
+          <button mat-flat-button color="primary">Voir planning</button>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="kpi-card">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>palm_tree</mat-icon>
+          <mat-card-title>Demander un congé</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Envoyez une demande d'absence</p>
+          <button mat-flat-button color="accent" (click)="onNewAbsenceRequest()">Nouvelle demande</button>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="kpi-card equity">
+        <mat-card-header>
+          <mat-icon mat-card-avatar>shield</mat-icon>
+          <mat-card-title>Mon score équité</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="score">85%</p>
+          <mat-progress-bar mode="determinate" value="85"></mat-progress-bar>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  } @else {
+    <!-- Manager Dashboard -->
+    <div class="kpi-row">
+      @if (kpis(); as k) {
+        <mat-card class="kpi-card green"><mat-icon>phone</mat-icon><span>Couverture Appels {{ k.coverageRate }}%</span></mat-card>
+        <mat-card class="kpi-card blue"><mat-icon>people</mat-icon><span>Employés Actifs {{ k.activeEmployees }}</span></mat-card>
+        <mat-card class="kpi-card red"><mat-icon>coffee</mat-icon><span>En Pause {{ k.onBreak }}</span></mat-card>
+        <mat-card class="kpi-card orange"><mat-icon>warning</mat-icon><span>Absents {{ k.absent }}</span></mat-card>
+        <mat-card class="kpi-card blue"><mat-icon>balance</mat-icon><span>Score Équité {{ k.equityScore }}%</span></mat-card>
+      }
+    </div>
+
+    @if (heatmap(); as h) {
+      <mat-card class="heatmap-card">
+        <mat-card-title>Heatmap de Présence</mat-card-title>
+        <mat-card-content>
+          <table class="heatmap">
+            <thead>
+              <tr><th></th>
+                @for (col of h.columnLabels; track col) { <th>{{ col }}</th> }
+              </tr>
+            </thead>
+            <tbody>
+              @for (row of h.rowLabels; track row; let i = $index) {
+                <tr>
+                  <td class="row-label">{{ row }}</td>
+                  @for (val of h.values[i]; track $index) {
+                    <td [style.background-color]="getHeatmapColor(val)"></td>
+                  }
+                </tr>
+              }
+            </tbody>
+          </table>
+        </mat-card-content>
+      </mat-card>
+    }
+
+    <div class="alerts-section">
+      <mat-card>
+        <mat-card-title>Alertes</mat-card-title>
+        <mat-card-content>
+          @for (a of alerts(); track a.id) {
+            <div class="alert-item">
+              <mat-icon [class]="a.severity === 'Critical' ? 'red' : 'orange'">warning</mat-icon>
+              <span>{{ a.message }}</span>
+            </div>
+          }
+        </mat-card-content>
+      </mat-card>
+    </div>
+  }
+</div>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kIfIUq+DRF0VXPGZu6O7IO/L2sLyUMtGHPciNzJ3ydY=",
+  "Source": "ShiftMaster.Gateway",
+  "BasePath": "_content/ShiftMaster.Gateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wGX2B9XLARx6xatP+LkDn7XnFSbeNCe7NZFQWVWosYc=",
+  "Source": "ShiftMaster.Absence.API",
+  "BasePath": "_content/ShiftMaster.Absence.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mJZDJ1YxXheiDLZISTfM9tkA/YcVQyBK0bd7m9tJ+WI=",
+  "Source": "ShiftMaster.Auth.API",
+  "BasePath": "_content/ShiftMaster.Auth.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
