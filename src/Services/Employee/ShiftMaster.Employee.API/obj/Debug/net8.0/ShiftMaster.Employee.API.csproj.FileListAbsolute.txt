@@ -118,3 +118,4 @@ C:\Users\pc\Desktop\KYNTUSproject\src\Services\Employee\ShiftMaster.Employee.API
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Employee\ShiftMaster.Employee.API\obj\Debug\net8.0\ShiftMaster.Employee.API.pdb
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Employee\ShiftMaster.Employee.API\obj\Debug\net8.0\ShiftMaster.Employee.API.genruntimeconfig.cache
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Employee\ShiftMaster.Employee.API\obj\Debug\net8.0\ref\ShiftMaster.Employee.API.dll
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Employee\ShiftMaster.Employee.API\obj\Debug\net8.0\ShiftMaster.Employee.API.sourcelink.json

@@ -40,3 +40,4 @@ C:\Users\pc\Desktop\KYNTUSproject\src\Gateway\ShiftMaster.Gateway\obj\Debug\net8
 C:\Users\pc\Desktop\KYNTUSproject\src\Gateway\ShiftMaster.Gateway\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ShiftMaster.Gateway.props
 C:\Users\pc\Desktop\KYNTUSproject\src\Gateway\ShiftMaster.Gateway\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ShiftMaster.Gateway.props
 C:\Users\pc\Desktop\KYNTUSproject\src\Gateway\ShiftMaster.Gateway\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\pc\Desktop\KYNTUSproject\src\Gateway\ShiftMaster.Gateway\obj\Debug\net8.0\ShiftMaster.Gateway.sourcelink.json

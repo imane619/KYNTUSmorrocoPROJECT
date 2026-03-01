@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShiftMaster.Gateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+618fa196694a31417500660abb36ceeab74b638f")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShiftMaster.Gateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShiftMaster.Gateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

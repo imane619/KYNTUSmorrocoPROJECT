@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ShiftMaster.Analytics.API.props" />
+</Project>

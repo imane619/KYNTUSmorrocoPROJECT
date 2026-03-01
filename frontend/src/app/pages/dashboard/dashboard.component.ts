@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -73,5 +74,10 @@ export class DashboardComponent {
     if (val === 0) return '#f44336';
     if (val === 1) return '#ff9800';
     return '#4caf50';
+  }
+
+  onNewAbsenceRequest(): void {
+    console.log("Navigation vers le formulaire de congé...");
+    this.router.navigate(['/absences/new']); 
   }
 }

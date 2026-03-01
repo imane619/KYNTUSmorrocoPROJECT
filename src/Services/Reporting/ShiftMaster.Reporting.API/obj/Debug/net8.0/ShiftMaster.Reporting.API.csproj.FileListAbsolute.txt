@@ -107,3 +107,9 @@ C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.A
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\obj\Debug\net8.0\ShiftMaster.Reporting.API.dll
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\obj\Debug\net8.0\refint\ShiftMaster.Reporting.API.dll
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\obj\Debug\net8.0\ShiftMaster.Reporting.API.pdb
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\bin\Debug\net8.0\ShiftMaster.Reporting.API.deps.json
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\bin\Debug\net8.0\ShiftMaster.Reporting.API.runtimeconfig.json
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\bin\Debug\net8.0\ShiftMaster.Reporting.API.pdb
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\obj\Debug\net8.0\ShiftMaster.Reporting.API.sourcelink.json
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\obj\Debug\net8.0\ShiftMaster.Reporting.API.genruntimeconfig.cache
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Reporting\ShiftMaster.Reporting.API\obj\Debug\net8.0\ref\ShiftMaster.Reporting.API.dll

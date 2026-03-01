@@ -1,0 +1,49 @@
+<div class="p-6">
+  <h2 class="text-2xl font-bold mb-4">Nouvelle demande de congé</h2>
+  
+  <mat-card class="p-4">
+    <form [formGroup]="absenceForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
+      
+      <mat-form-field appearance="outline">
+        <mat-label>Type de congé</mat-label>
+        <mat-select formControlName="type" (selectionChange)="onTypeChange($event.value)">
+          <mat-option value="Payé">Congé Payé (Solde: 30j)</mat-option>
+          <mat-option value="Absence">Absence</mat-option>
+          <mat-option value="Préavis">Préavis</mat-option>
+          <mat-option value="Maternité">Maternité</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="flex gap-4">
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Date de début</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="startDate" (dateChange)="calculateDays()">
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="w-full">
+          <mat-label>Date de fin</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="endDate" (dateChange)="calculateDays()">
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="bg-gray-100 p-3 rounded">
+        <p>Jours calculés (samedi inclus) : <strong>{{ totalDays() }} jours</strong></p>
+        @if (isSoldeInsuffisant()) {
+          <p class="text-red-600 font-bold">⚠️ Solde insuffisant ! Vous ne pouvez pas dépasser votre solde.</p>
+        }
+      </div>
+
+      <div class="flex justify-end gap-2">
+        <button mat-button type="button" routerLink="/my-leaves">Annuler</button>
+        <button mat-flat-button color="primary" type="submit" 
+                [disabled]="absenceForm.invalid || isSoldeInsuffisant()">
+          Soumettre la demande
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

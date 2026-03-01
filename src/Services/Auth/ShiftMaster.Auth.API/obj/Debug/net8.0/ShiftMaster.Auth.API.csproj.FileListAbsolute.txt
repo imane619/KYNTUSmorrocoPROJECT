@@ -113,3 +113,4 @@ C:\Users\pc\Desktop\KYNTUSproject\src\Services\Auth\ShiftMaster.Auth.API\obj\Deb
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Auth\ShiftMaster.Auth.API\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ShiftMaster.Auth.API.props
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Auth\ShiftMaster.Auth.API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ShiftMaster.Auth.API.props
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Auth\ShiftMaster.Auth.API\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Auth\ShiftMaster.Auth.API\obj\Debug\net8.0\ShiftMaster.Auth.API.sourcelink.json

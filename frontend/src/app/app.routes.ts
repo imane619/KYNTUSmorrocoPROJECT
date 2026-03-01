@@ -21,11 +21,7 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/planning/planning.component').then((m) => m.PlanningComponent),
         canActivate: [roleGuard(['Admin', 'Manager'])]
       },
-      {
-        path: 'leaves',
-        loadComponent: () => import('./pages/leaves/leaves.component').then((m) => m.LeavesComponent),
-        canActivate: [roleGuard(['Admin', 'Manager'])]
-      },
+
       {
         path: 'analytics',
         loadComponent: () => import('./pages/analytics/analytics.component').then((m) => m.AnalyticsComponent),
@@ -40,6 +36,8 @@ export const routes: Routes = [
       { path: 'settings', loadComponent: () => import('./pages/settings/settings.component').then((m) => m.SettingsComponent) },
       { path: 'my-planning', loadComponent: () => import('./pages/my-planning/my-planning.component').then((m) => m.MyPlanningComponent), canActivate: [roleGuard(['Employee'])] },
       { path: 'my-leaves', loadComponent: () => import('./pages/my-leaves/my-leaves.component').then((m) => m.MyLeavesComponent), canActivate: [roleGuard(['Employee'])] },
+      { path: 'my-leaves/new', loadComponent: () => import('./pages/my-leaves/absence-form/absence-form.component').then((m) => m.AbsenceFormComponent),canActivate: [roleGuard(['Employee'])] 
+      },
       { path: 'my-equity', loadComponent: () => import('./pages/my-equity/my-equity.component').then((m) => m.MyEquityComponent), canActivate: [roleGuard(['Employee'])] }
     ]
   },

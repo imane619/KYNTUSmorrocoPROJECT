@@ -112,3 +112,4 @@ C:\Users\pc\Desktop\KYNTUSproject\src\Services\Absence\ShiftMaster.Absence.API\b
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Absence\ShiftMaster.Absence.API\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Absence\ShiftMaster.Absence.API\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\pc\Desktop\KYNTUSproject\src\Services\Absence\ShiftMaster.Absence.API\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\pc\Desktop\KYNTUSproject\src\Services\Absence\ShiftMaster.Absence.API\obj\Debug\net8.0\ShiftMaster.Absence.API.sourcelink.json

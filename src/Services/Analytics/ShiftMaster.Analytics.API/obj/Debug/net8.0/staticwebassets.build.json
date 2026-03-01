@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"RvoAMA/xayVCpfoFF+VlTc1DThNlwwGPtUnisoNgjCw=","Source":"ShiftMaster.Analytics.API","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "Jhb75A7HCy0ozyHrVwKRR6CCDva41j1tkYCLqKPoHXA=",
+  "Source": "ShiftMaster.Analytics.API",
+  "BasePath": "_content/ShiftMaster.Analytics.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
