@@ -3,9 +3,16 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ShiftMaster.Absence.API.Application.Services;
 using ShiftMaster.Absence.API.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddHttpClient<IPlanningApiClient, PlanningApiClient>(client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["Services:Planning:Url"] ?? "http://localhost:5003/");
+}).AddHttpMessageHandler<ForwardAuthHandler>();
 
 builder.Services.AddDbContext<AbsenceDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

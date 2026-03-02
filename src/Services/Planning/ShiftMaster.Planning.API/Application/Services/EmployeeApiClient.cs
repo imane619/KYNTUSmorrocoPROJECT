@@ -23,6 +23,7 @@ public class EmployeeApiClient : IEmployeeApiClient
             LastName = d.LastName,
             CelluleId = d.CelluleId,
             PreavisFlag = d.PreavisFlag,
+            PreavisReduction = d.PreavisReduction,
             SaturdayRotationRule = d.SaturdayRotationRule,
             Availability = d.Availability
         }).ToList();

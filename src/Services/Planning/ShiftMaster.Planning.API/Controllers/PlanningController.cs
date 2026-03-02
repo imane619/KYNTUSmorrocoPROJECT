@@ -68,6 +68,8 @@ public class PlanningController : ControllerBase
                 ShiftId = e.ShiftId,
                 ShiftCode = e.ShiftCode,
                 Date = e.Date,
+                StartTime = e.StartTime,
+                EndTime = e.EndTime,
                 Status = e.Status
             }).ToList()
         });
@@ -114,8 +116,29 @@ public class PlanningController : ControllerBase
             ShiftId = e.ShiftId,
             ShiftCode = e.ShiftCode,
             Date = e.Date,
+            StartTime = e.StartTime,
+            EndTime = e.EndTime,
             Status = e.Status
         }));
+    }
+
+    /// <summary>
+    /// Remove planning entries for an employee in a date range (e.g. when leave approved).
+    /// </summary>
+    [HttpDelete("entries")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    public async Task<IActionResult> RemoveEntriesForEmployee(
+        [FromQuery] Guid employeeId,
+        [FromQuery] DateTime startDate,
+        [FromQuery] DateTime endDate,
+        CancellationToken ct = default)
+    {
+        var toRemove = await _db.PlanningEntries
+            .Where(e => e.EmployeeId == employeeId && e.Date >= startDate && e.Date <= endDate && (e.Status == "Working" || e.Status == "Preavis"))
+            .ToListAsync(ct);
+        _db.PlanningEntries.RemoveRange(toRemove);
+        await _db.SaveChangesAsync(ct);
+        return NoContent();
     }
 }
 

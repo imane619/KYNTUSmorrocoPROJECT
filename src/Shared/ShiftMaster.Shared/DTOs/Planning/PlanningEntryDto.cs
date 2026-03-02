@@ -11,6 +11,8 @@ public record PlanningEntryDto
     public Guid ShiftId { get; init; }
     public string ShiftCode { get; init; } = string.Empty;
     public DateTime Date { get; init; }
+    public TimeSpan? StartTime { get; init; }
+    public TimeSpan? EndTime { get; init; }
     public string Status { get; init; } = "Working"; // Working, PaidLeave, Sick, Maternity, Preavis
     public string StatusColor => Status switch
     {

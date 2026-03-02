@@ -1,2 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html, body { height: 100%; margin: 0; }
-body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  font-family: 'Inter', 'SF Pro Display', Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
+  color: #e2e8f0;
+}

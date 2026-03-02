@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AbsenceEntity = ShiftMaster.Absence.API.Domain.Entities.Absence;
+using ShiftMaster.Absence.API.Application.Services;
 using ShiftMaster.Absence.API.Infrastructure.Data;
 using ShiftMaster.Shared.DTOs.Absence;
 
@@ -13,8 +14,13 @@ namespace ShiftMaster.Absence.API.Controllers;
 public class AbsencesController : ControllerBase
 {
     private readonly AbsenceDbContext _db;
+    private readonly IPlanningApiClient _planningClient;
 
-    public AbsencesController(AbsenceDbContext db) => _db = db;
+    public AbsencesController(AbsenceDbContext db, IPlanningApiClient planningClient)
+    {
+        _db = db;
+        _planningClient = planningClient;
+    }
 
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<AbsenceDto>), StatusCodes.Status200OK)]
@@ -47,7 +53,9 @@ public class AbsencesController : ControllerBase
             StartDate = request.StartDate,
             EndDate = request.EndDate,
             Status = "Pending",
-            Reason = request.Reason
+            Reason = request.Reason,
+            JustificationPath = request.JustificationPath,
+            Comment = request.Comment
         };
         _db.Absences.Add(absence);
         await _db.SaveChangesAsync(ct);
@@ -72,7 +80,17 @@ public class AbsencesController : ControllerBase
         var a = await _db.Absences.FindAsync([id], ct);
         if (a == null) return NotFound();
         a.Status = "Approved";
+        a.ResolvedAt = DateTime.UtcNow;
         await _db.SaveChangesAsync(ct);
+
+        try
+        {
+            await _planningClient.OnLeaveApprovedAsync(a.EmployeeId, a.StartDate, a.EndDate, ct);
+        }
+        catch
+        {
+        }
+
         return Ok(Map(a));
     }
 
@@ -98,6 +116,8 @@ public class AbsencesController : ControllerBase
         EndDate = a.EndDate,
         Status = a.Status,
         Reason = a.Reason,
+        JustificationPath = a.JustificationPath,
+        Comment = a.Comment,
         CreatedAt = a.CreatedAt
     };
 }
@@ -110,4 +130,6 @@ public record CreateAbsenceRequest
     public DateTime StartDate { get; init; }
     public DateTime EndDate { get; init; }
     public string? Reason { get; init; }
+    public string? JustificationPath { get; init; }
+    public string? Comment { get; init; }
 }

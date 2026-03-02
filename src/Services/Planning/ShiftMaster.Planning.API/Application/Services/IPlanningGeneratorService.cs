@@ -22,6 +22,7 @@ public record EmployeeInfo
     public string LastName { get; init; } = string.Empty;
     public Guid? CelluleId { get; init; }
     public bool PreavisFlag { get; init; }
+    public int PreavisReduction { get; init; } = 1;
     public bool SaturdayRotationRule { get; init; }
     public string[] Availability { get; init; } = [];
 }

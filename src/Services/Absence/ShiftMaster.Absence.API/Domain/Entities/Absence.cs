@@ -1,8 +1,8 @@
 namespace ShiftMaster.Absence.API.Domain.Entities;
 
 /// <summary>
-/// Absence/Leave entity.
-/// Type: PaidLeave, Sick, Maternity, Unpaid
+/// Absence/Leave entity (LeaveRequest).
+/// Type: PaidLeave, Sick, Maternity, Unpaid, Exceptionnel
 /// Status: Pending, Approved, Rejected
 /// </summary>
 public class Absence
@@ -15,5 +15,9 @@ public class Absence
     public DateTime EndDate { get; set; }
     public string Status { get; set; } = "Pending";
     public string? Reason { get; set; }
+    /// <summary>Path to uploaded justification file.</summary>
+    public string? JustificationPath { get; set; }
+    public string? Comment { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime? ResolvedAt { get; set; }
 }

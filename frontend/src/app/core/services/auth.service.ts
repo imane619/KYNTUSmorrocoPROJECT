@@ -11,6 +11,7 @@ export interface UserInfo {
   lastName: string;
   fullName: string;
   role: string;
+  employeeId?: string;
 }
 
 export interface LoginResponse {

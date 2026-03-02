@@ -24,12 +24,14 @@ public record CreateEmployeeRequest
 
     [Required]
     public string ContractType { get; init; } = "CDI";
+    public string EmploymentType { get; init; } = "CDI";
 
     public DateTime HireDate { get; init; } = DateTime.UtcNow.Date;
 
     public string[] Skills { get; init; } = [];
     public string[] Availability { get; init; } = [];
     public bool PreavisFlag { get; init; }
+    public int PreavisReduction { get; init; } = 1;
     public bool SaturdayRotationRule { get; init; }
     public Guid? PoleId { get; init; }
     public Guid? CelluleId { get; init; }

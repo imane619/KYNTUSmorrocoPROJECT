@@ -17,7 +17,7 @@ namespace ShiftMaster.Employee.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "10.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -71,6 +71,13 @@ namespace ShiftMaster.Employee.API.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("EmploymentType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<double>("EquityScore")
+                        .HasColumnType("double precision");
+
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("text");
@@ -93,6 +100,9 @@ namespace ShiftMaster.Employee.API.Migrations
 
                     b.Property<bool>("PreavisFlag")
                         .HasColumnType("boolean");
+
+                    b.Property<int>("PreavisReduction")
+                        .HasColumnType("integer");
 
                     b.Property<bool>("SaturdayRotationRule")
                         .HasColumnType("boolean");

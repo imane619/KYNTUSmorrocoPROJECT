@@ -13,5 +13,7 @@ public record AbsenceDto
     public DateTime EndDate { get; init; }
     public string Status { get; init; } = string.Empty; // Pending, Approved, Rejected
     public string? Reason { get; init; }
+    public string? JustificationPath { get; init; }
+    public string? Comment { get; init; }
     public DateTime CreatedAt { get; init; }
 }

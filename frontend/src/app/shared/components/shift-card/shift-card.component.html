@@ -1,0 +1,12 @@
+<div class="shift-card glass-card">
+  <div class="shift-tag" [style.background]="shiftColor()">{{ data().shiftCode }}</div>
+  <p class="shift-time">{{ data().startTime }} - {{ data().endTime }}</p>
+  @if (data().cellule) {
+    <p class="shift-cellule">{{ data().cellule }}</p>
+  }
+  <div class="shift-status">
+    <span class="status-dot" [class.en-cours]="data().status === 'En cours'"></span>
+    {{ data().status }}
+  </div>
+  <a mat-flat-button color="primary" routerLink="/my-planning" class="mt-3">Voir planning</a>
+</div>

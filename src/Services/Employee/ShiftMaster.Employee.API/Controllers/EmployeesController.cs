@@ -49,6 +49,8 @@ public class EmployeesController : ControllerBase
             Skills = request.Skills,
             Availability = request.Availability,
             PreavisFlag = request.PreavisFlag,
+            PreavisReduction = request.PreavisReduction,
+            EmploymentType = request.EmploymentType,
             SaturdayRotationRule = request.SaturdayRotationRule,
             PoleId = request.PoleId,
             CelluleId = request.CelluleId,
@@ -74,6 +76,8 @@ public class EmployeesController : ControllerBase
         emp.Skills = request.Skills;
         emp.Availability = request.Availability;
         emp.PreavisFlag = request.PreavisFlag;
+        emp.PreavisReduction = request.PreavisReduction;
+        emp.EmploymentType = request.EmploymentType;
         emp.SaturdayRotationRule = request.SaturdayRotationRule;
         emp.PoleId = request.PoleId;
         emp.CelluleId = request.CelluleId;
@@ -98,12 +102,15 @@ public class EmployeesController : ControllerBase
         Email = e.Email,
         Phone = e.Phone,
         ContractType = e.ContractType,
+        EmploymentType = e.EmploymentType,
         HireDate = e.HireDate,
         SeniorityMonths = (int)(DateTime.UtcNow - e.HireDate).TotalDays / 30,
         Skills = e.Skills,
         Availability = e.Availability,
         PreavisFlag = e.PreavisFlag,
+        PreavisReduction = e.PreavisReduction,
         SaturdayRotationRule = e.SaturdayRotationRule,
+        EquityScore = e.EquityScore,
         PoleId = e.PoleId,
         CelluleId = e.CelluleId,
         DepartementId = e.DepartementId,

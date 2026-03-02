@@ -1,40 +1,29 @@
 <div class="dashboard">
   <h1>Bonjour {{ auth.user()?.firstName }} 👋</h1>
+  <p class="subtitle">Voici votre tableau de bord personnel</p>
 
   @if (isEmployee) {
-    <!-- Employee Dashboard -->
     <div class="cards">
-      <mat-card class="kpi-card">
-        <mat-card-header>
-          <mat-icon mat-card-avatar>calendar_month</mat-icon>
-          <mat-card-title>Mon planning semaine</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>Lun Mar Mer Jeu Ven Sam Dim</p>
-          <div class="shift-bar">9h - 16h</div>
-          <button mat-flat-button color="primary">Voir planning</button>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="kpi-card">
-        <mat-card-header>
-          <mat-icon mat-card-avatar>palm_tree</mat-icon>
-          <mat-card-title>Demander un congé</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p>Envoyez une demande d'absence</p>
-          <button mat-flat-button color="accent" (click)="onNewAbsenceRequest()">Nouvelle demande</button>
-        </mat-card-content>
-      </mat-card>
-      <mat-card class="kpi-card equity">
-        <mat-card-header>
-          <mat-icon mat-card-avatar>shield</mat-icon>
-          <mat-card-title>Mon score équité</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <p class="score">85%</p>
-          <mat-progress-bar mode="determinate" value="85"></mat-progress-bar>
-        </mat-card-content>
-      </mat-card>
+      <div class="card">
+        <h3>Mon Shift Aujourd'hui</h3>
+        @if (todayShiftData(); as shift) {
+          <app-shift-card [data]="shift" />
+        } @else {
+          <app-shift-card [data]="defaultShiftCard" />
+        }
+      </div>
+      <div class="card">
+        <app-leave-summary [remaining]="leaveBalance().remaining" [total]="leaveBalance().total" [nextLeave]="leaveBalance().nextLeave" />
+      </div>
+      <div class="card">
+        <h3>Score Équité</h3>
+        <app-equity-widget [score]="equityScore()" [label]="equityLabel()" trend="+5% ce mois" />
+      </div>
+      <div class="card notifications-card">
+        <h3>Notifications</h3>
+        <p class="unread">{{ notificationsUnread() }} non lues</p>
+        <a mat-flat-button color="primary" routerLink="/notifications">Voir tout</a>
+      </div>
     </div>
   } @else {
     <!-- Manager Dashboard -->

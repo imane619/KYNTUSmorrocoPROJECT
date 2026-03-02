@@ -1,0 +1,23 @@
+.shift-card {
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.shift-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+.shift-time { font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0; }
+.shift-cellule { font-size: 0.875rem; opacity: 0.8; margin: 0; }
+.shift-status { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; font-size: 0.875rem; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #64748b; }
+.status-dot.en-cours { background: #10b981; box-shadow: 0 0 8px #10b981; }
+.mt-3 { margin-top: 1rem; }
